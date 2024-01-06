@@ -4,6 +4,6 @@ WORKDIR /go/src
 ENV PATH="/go/bin:${PATH}"
 ENV CGO_ENABLED=0
 
-RUN go get github.com/spf13/cobra@latest
+RUN go install github.com/spf13/cobra-cli@latest
 
 CMD ["tail", "-f", "/dev/null"]
