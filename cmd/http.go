@@ -18,9 +18,9 @@ var httpCmd = &cobra.Command{
 	The default port is 4040 and you can change it using the flag --port or -p. 
 
 	Example of usage: 
-		golang-cli-cobra http -p :8080
+		go run main.go http -p :4040
 		
-	After that, you can access the server on http://localhost:8080/?a=x&b=y (change x and y for numbers that you want to sum)`,
+	After that, you can access the server on localhost:4040/?a=x&b=y (change x and y for numbers that you want to sum)`,
 	Run: func(cmd *cobra.Command, args []string) {
 		server := web.Server{Port: port}
 		server.Serve()
