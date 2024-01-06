@@ -1,33 +1,29 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/gabrielteiga/golang-cli-cobra/webserver"
 	"github.com/spf13/cobra"
 )
+
+var port string
 
 // httpCmd represents the http command
 var httpCmd = &cobra.Command{
 	Use:   "http",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Run HTTP Server",
+	Long:  `Long description`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("http called")
+		server := webserver.Server{Port: port}
+		server.Serve()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(httpCmd)
-
+	httpCmd.Flags().StringVarP(&port, "port", "p", ":4040", "Port to be used on HTTP Server")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
