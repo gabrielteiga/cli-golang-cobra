@@ -4,7 +4,7 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"github.com/gabrielteiga/golang-cli-cobra/webserver"
+	"github.com/gabrielteiga/golang-cli-cobra/web"
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +16,7 @@ var httpCmd = &cobra.Command{
 	Short: "Run HTTP Server",
 	Long:  `Long description`,
 	Run: func(cmd *cobra.Command, args []string) {
-		server := webserver.Server{Port: port}
+		server := web.Server{Port: port}
 		server.Serve()
 	},
 }
