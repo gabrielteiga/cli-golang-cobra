@@ -16,7 +16,7 @@ var num1, num2 float64
 var cliCmd = &cobra.Command{
 	Use:   "cli",
 	Short: "Sum two numbers",
-	Long:  `Long description`,
+	Long:  `The cli command will sum 2 numbers and print on the command line.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		calc := app.NewCalc()
 		calc.A = num1
